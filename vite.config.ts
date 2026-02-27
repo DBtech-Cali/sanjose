@@ -8,9 +8,10 @@ export default defineConfig({
     react(),
     tailwindcss(), // necesario para que Tailwind aplique todos los estilos
   ],
-  // Si vas a publicar en GitHub Pages, deja este base con el nombre del repo.
-  // En desarrollo (`npm run dev`) no afecta cómo se ve la app.
-  base: '/sanjose/',
+  // En Vercel (y en la mayoría de hostings) la app vive en la raíz,
+  // por eso el base debe ser '/' para que carguen bien los assets.
+  // Solo deberías usar algo como '/sanjose/' si publicas en GitHub Pages.
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

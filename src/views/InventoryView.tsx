@@ -124,17 +124,17 @@ export default function InventoryView() {
   }
 
   return (
-    <div className="pb-10">
-      <section className="px-4 pt-6 pb-2">
-        <h1 className="text-slate-900 text-[24px] font-extrabold leading-tight tracking-tight">
+    <div className="pb-10 px-4 md:px-6 lg:px-8">
+      <section className="pt-6 pb-2 md:pt-8 md:pb-4">
+        <h1 className="text-slate-900 text-[24px] md:text-[28px] font-extrabold leading-tight tracking-tight">
           {editingEntry ? 'Editar Compra' : 'Compras e Insumos'}
         </h1>
-        <p className="text-slate-500 text-sm">
+        <p className="text-slate-500 text-sm md:text-base max-w-2xl">
           {editingEntry ? 'Modifique los detalles de la compra.' : 'Ingrese los detalles de la compra de suministros.'}
         </p>
       </section>
 
-      <form onSubmit={handleSubmit} className="space-y-4 px-4 py-4">
+      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5 py-4 md:py-6 max-w-3xl">
         <div className="flex flex-col w-full">
           <label className="text-slate-700 text-sm font-semibold pb-1.5 ml-1">Nombre del Artículo</label>
           <div className="relative">
@@ -164,7 +164,7 @@ export default function InventoryView() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 md:gap-6">
           <div className="flex flex-col">
             <label className="text-slate-700 text-sm font-semibold pb-1.5 ml-1">Cantidad</label>
             <div className="relative">
@@ -195,9 +195,9 @@ export default function InventoryView() {
           </div>
         </div>
 
-        <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 flex justify-between items-center">
+        <div className="bg-primary/10 border border-primary/20 rounded-xl p-4 md:p-5 flex justify-between items-center">
           <span className="text-slate-700 font-medium text-sm">Costo Total</span>
-          <span className="text-slate-900 font-bold text-xl">${totalCost.toLocaleString('es-CO')}</span>
+          <span className="text-slate-900 font-bold text-xl md:text-2xl">${totalCost.toLocaleString('es-CO')}</span>
         </div>
 
         <div className="flex gap-2">
@@ -226,9 +226,9 @@ export default function InventoryView() {
         </div>
       </form>
 
-      <section className="mt-8 px-4">
+      <section className="mt-8 max-w-3xl">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-slate-900 text-lg font-bold">Entradas Recientes</h3>
+          <h3 className="text-slate-900 text-lg md:text-xl font-bold">Entradas Recientes</h3>
           <button className="text-primary text-sm font-semibold flex items-center gap-1">
             Ver Todo <ChevronRight size={14} />
           </button>

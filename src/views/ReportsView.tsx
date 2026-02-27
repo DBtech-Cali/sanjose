@@ -122,7 +122,7 @@ export default function ReportsView() {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 md:p-6 lg:p-8">
       <div className="mb-2">
         <p className="text-xs font-bold text-primary uppercase tracking-widest">Tienda Escolar San José</p>
       </div>
@@ -150,8 +150,8 @@ export default function ReportsView() {
       </div>
 
       {/* Summary Cards */}
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-row gap-4">
+      <div className="flex flex-col gap-4 md:gap-5 max-w-4xl">
+        <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-1 flex-col gap-2 rounded-xl p-5 bg-white border border-primary/5 shadow-sm">
             <div className="flex items-center gap-2">
               <DollarSign size={18} className="text-primary" />

@@ -135,16 +135,16 @@ export default function POSView() {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 md:p-6 lg:p-8">
       {/* Categories */}
-      <div className="mb-6">
+      <div className="mb-6 md:mb-8">
         <h2 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3 px-1">Categorías</h2>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 md:flex md:flex-wrap md:gap-3 gap-2">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.name}
               onClick={() => setSelectedCategory(cat.name)}
-              className={`flex flex-col items-center gap-1 rounded-xl p-3 transition-all border-2 ${
+              className={`flex flex-col items-center gap-1 rounded-xl p-3 md:px-4 transition-all border-2 ${
                 selectedCategory === cat.name 
                   ? 'bg-primary/10 border-primary text-primary' 
                   : 'bg-white border-transparent text-slate-500 shadow-sm'
@@ -158,14 +158,14 @@ export default function POSView() {
       </div>
 
       {/* Products */}
-      <div>
+      <div className="md:mt-2">
         <div className="flex items-center justify-between mb-3 px-1">
           <h2 className="text-xs font-bold uppercase tracking-widest text-slate-500">Productos: {selectedCategory}</h2>
           <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold">
             {products.filter(p => p.category === selectedCategory).length} items
           </span>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {products.filter(p => p.category === selectedCategory).map((product) => (
             <motion.button
               whileTap={{ scale: 0.95 }}
@@ -176,9 +176,9 @@ export default function POSView() {
               <div className="aspect-square w-full rounded-lg overflow-hidden bg-slate-100">
                 <ProductImage productName={product.name} className="w-full h-full rounded-lg" />
               </div>
-              <div className="px-1 pb-1 text-center">
-                <p className="text-sm font-bold truncate text-slate-800">{product.name}</p>
-                <p className="text-xs text-primary font-bold">${product.price.toLocaleString('es-CO')}</p>
+              <div className="px-1 pb-1 text-center md:text-left">
+                <p className="text-sm md:text-[15px] font-bold truncate text-slate-800">{product.name}</p>
+                <p className="text-xs md:text-sm text-primary font-bold">${product.price.toLocaleString('es-CO')}</p>
               </div>
             </motion.button>
           ))}
@@ -194,8 +194,8 @@ export default function POSView() {
             exit={{ y: 100, opacity: 0 }}
             className="fixed bottom-[88px] left-4 right-4 z-20 max-w-[calc(28rem-2rem)] mx-auto"
           >
-            <div className="flex flex-col rounded-2xl bg-white p-4 shadow-2xl border border-primary/20 ring-1 ring-black/5">
-              <div className="flex items-center justify-between mb-3">
+            <div className="flex flex-col rounded-2xl bg-white p-4 md:p-5 shadow-2xl border border-primary/20 ring-1 ring-black/5 md:flex-row md:items-center md:justify-between md:gap-6">
+              <div className="flex items-center justify-between mb-3 md:mb-0 md:flex-col md:items-start md:gap-2">
                 <div className="flex items-center gap-2">
                   <ShoppingCart size={18} className="text-slate-400" />
                   <span className="text-sm font-bold text-slate-700">Carrito de Venta</span>
@@ -208,14 +208,14 @@ export default function POSView() {
                   <Trash2 size={12} /> Limpiar
                 </button>
               </div>
-              <div className="flex items-center justify-between mb-4 border-t border-slate-100 pt-3">
+              <div className="flex items-center justify-between mb-4 border-t border-slate-100 pt-3 md:border-none md:pt-0 md:mb-0 md:flex-col md:items-end md:gap-1">
                 <span className="text-base font-bold text-slate-500">Total</span>
-                <span className="text-2xl font-black text-primary">${total.toLocaleString('es-CO')}</span>
+                <span className="text-2xl md:text-3xl font-black text-primary">${total.toLocaleString('es-CO')}</span>
               </div>
               <button 
                 onClick={confirmSale}
                 disabled={isConfirming}
-                className="w-full rounded-xl bg-primary py-4 text-center text-slate-900 font-black text-lg active:scale-[0.98] transition-all shadow-lg shadow-primary/20 disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full md:w-auto md:min-w-[220px] rounded-xl bg-primary py-4 px-6 text-center text-slate-900 font-black text-lg active:scale-[0.98] transition-all shadow-lg shadow-primary/20 disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {isConfirming && <Loader2 className="animate-spin" size={20} />}
                 Confirmar Venta

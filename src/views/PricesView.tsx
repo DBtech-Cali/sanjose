@@ -134,13 +134,13 @@ export default function PricesView() {
   }
 
   return (
-    <div className="p-4">
-      <div className="flex flex-col items-center mb-4">
+    <div className="p-4 md:p-6 lg:p-8">
+      <div className="flex flex-col items-center mb-4 md:mb-6">
         <p className="text-xs text-primary font-semibold">Tienda Escolar San José</p>
       </div>
 
       {/* Search & Add */}
-      <div className="flex gap-2 mb-4">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-4 mb-4 md:mb-6">
         <div className="relative flex-1">
           <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary">
             <Search size={20} />
@@ -160,14 +160,14 @@ export default function PricesView() {
             setEditPrice('');
             setEditCategory('Bebida');
           }}
-          className="bg-primary text-slate-900 size-12 rounded-xl flex items-center justify-center shadow-md active:scale-95"
+          className="bg-primary text-slate-900 size-12 md:size-12 rounded-xl flex items-center justify-center shadow-md active:scale-95 self-start"
         >
           <Plus size={24} />
         </button>
       </div>
 
       {/* Categories Scroll */}
-      <div className="flex gap-3 mb-6 overflow-x-auto no-scrollbar pb-2">
+      <div className="flex gap-3 mb-6 overflow-x-auto no-scrollbar pb-2 md:justify-start">
         <button className="flex h-10 shrink-0 items-center justify-center rounded-xl bg-primary px-4 text-slate-900 font-bold shadow-md">
           Todos
         </button>
@@ -234,26 +234,26 @@ export default function PricesView() {
       </AnimatePresence>
 
       {/* Product List */}
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="text-slate-900 text-base font-bold">Catálogo de Productos</h3>
-        <span className="text-xs font-medium text-slate-500 bg-slate-200 px-2 py-1 rounded">{filteredProducts.length} Items</span>
+      <div className="flex justify-between items-center mb-4 md:mb-5">
+        <h3 className="text-slate-900 text-base md:text-lg font-bold">Catálogo de Productos</h3>
+        <span className="text-xs md:text-sm font-medium text-slate-500 bg-slate-200 px-2 py-1 rounded">{filteredProducts.length} Items</span>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-3 md:space-y-4">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100">
+          <div key={product.id} className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3 md:gap-4">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg overflow-hidden shrink-0 bg-slate-100">
                 <ProductImage productName={product.name} className="w-full h-full rounded-lg" />
               </div>
               <div>
-                <p className="font-bold text-slate-900">{product.name}</p>
-                <p className="text-xs text-slate-500">{product.category}</p>
+                <p className="font-bold text-slate-900 text-sm md:text-base">{product.name}</p>
+                <p className="text-xs md:text-sm text-slate-500">{product.category}</p>
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 md:gap-6">
               <div className="text-right">
-                <p className="text-sm font-bold text-slate-900">${product.price.toLocaleString('es-CO')}</p>
+                <p className="text-sm md:text-base font-bold text-slate-900">${product.price.toLocaleString('es-CO')}</p>
                 <button 
                   onClick={() => startEditing(product)}
                   className="mt-1 text-xs font-bold text-primary flex items-center justify-end gap-1 hover:underline"
