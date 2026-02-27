@@ -1,20 +1,26 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 📊 Control Financiero – Tienda Escolar
 
-# Run and deploy your AI Studio app
+Esta es una aplicación web sencilla para llevar el control financiero de una tienda escolar, permitiendo registrar ingresos, gastos y visualizar el estado general del dinero de forma rápida y organizada.
 
-This contains everything you need to run your app locally.
+Está pensada para apoyar la gestión económica en entornos educativos, facilitando el seguimiento de ventas y movimientos diarios.
 
-View your app in AI Studio: https://ai.studio/apps/040a6681-cb26-4759-b6a7-ea930bfaa5ed
+---
 
-## Run Locally
+## 🚀 Características
 
-**Prerequisites:**  Node.js
+- Registro de ingresos por ventas.
+- Registro de gastos.
+- Visualización del balance total.
+- Interfaz simple y fácil de usar.
+- Acceso desde cualquier dispositivo con internet.
+- Integración con Firebase para almacenamiento de datos.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ Tecnologías utilizadas
+
+- HTML  
+- CSS  
+- JavaScript  
+- Firebase  
+- GitHub Pages / Vercel (para despliegue)
